@@ -33,11 +33,14 @@ def upd(uid,amt,won=None):
 def get_tokens(uid):
     r=get_user(uid);return r[2] if r else 100
 
+DEPOSIT_URL="https://willowy-cuchufli-cc0591.netlify.app/"
+
 def main_kb():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("🎮 Games",callback_data="games")],
         [InlineKeyboardButton("💰 Wallet",callback_data="wallet"),InlineKeyboardButton("🎁 Daily",callback_data="daily")],
-        [InlineKeyboardButton("🏆 Leaderboard",callback_data="leaderboard"),InlineKeyboardButton("👥 Referral",callback_data="referral")]
+        [InlineKeyboardButton("🏆 Leaderboard",callback_data="leaderboard"),InlineKeyboardButton("👥 Referral",callback_data="referral")],
+        [InlineKeyboardButton("💳 Deposit / Withdraw",url=DEPOSIT_URL)]
     ])
 
 def games_kb():
